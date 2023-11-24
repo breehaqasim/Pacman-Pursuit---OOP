@@ -9,8 +9,8 @@
 
 class Game{
     //Screen dimension constants
-    const int SCREEN_WIDTH = 1179; //1000
-    const int SCREEN_HEIGHT = 657; //600
+    const int SCREEN_WIDTH = 1179; 
+    const int SCREEN_HEIGHT = 657; 
 
 
     //The window we'll be rendering to
@@ -22,7 +22,6 @@ class Game{
     //Current displayed texture
     SDL_Texture* gTexture = NULL;
 
-    //SDL_Texture* GTexture = NULL;
     //global reference to png image sheets
     SDL_Texture* assets=NULL;
 
@@ -36,6 +35,6 @@ public:
     void close();
     SDL_Texture* loadTexture( std::string path );
     void run();
-    //void music(); // plays the music if it is not already playing
+    
 };
 

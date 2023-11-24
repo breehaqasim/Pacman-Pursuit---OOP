@@ -1,6 +1,8 @@
 #include "game.hpp"
-#include "Draw.hpp"
+#include "Level1.hpp"
 #include <SDL_mixer.h>
+#include "pacman.hpp"
+
 
 bool Game::init()
 {
@@ -62,7 +64,6 @@ bool Game::loadMedia()
 	//Loading success flag
 	bool success = true;
 	
-	//assets = loadTexture("./assets/elements.png");
     gTexture = loadTexture("./assets/welcome.jpg");
 	if(gTexture==NULL)
     {
@@ -80,14 +81,6 @@ bool Game::loadMedia()
 	// return success;
 }
 
-// void Game::music() // called in main.cpp to play music
-// {
-//     if( Mix_PlayingMusic() == 0 ) // Tells you if music is actively playing,
-// 	{
-// 		//Play the music
-// 		Mix_PlayMusic( gMusic, 2 );
-// 	}
-// }
 
 void Game::close()
 {
@@ -101,7 +94,8 @@ void Game::close()
 	SDL_DestroyWindow( gWindow );
 	gWindow = NULL;
 	gRenderer = NULL;
-	//Mix_FreeMusic(gMusic);
+	// Mix_FreeMusic(gMusic);
+	// gMusic = NULL;
 	//Quit SDL subsystems
 	IMG_Quit();
 	SDL_Quit();
@@ -140,9 +134,20 @@ void Game::run( )
 	//Loading success flag
 	bool success = true;
 
+	//adjusting fps
+	const int targetFPS = 60;
+    const int frameDelay = 1000 / targetFPS;
+
+    Uint32 frameStart;
+    int frameTime;
+
+	Pacman pacman;
+	Level1 level1;
+
 
 	while( !quit )
 	{
+		frameStart = SDL_GetTicks();
 		//Handle events on queue
 		while( SDL_PollEvent( &e ) != 0 )
 		{
@@ -153,7 +158,6 @@ void Game::run( )
 			}
 
 			if(e.type == SDL_MOUSEBUTTONDOWN){
-			//this is a good location to add pigeon in linked list.
 				int xMouse, yMouse;
 				SDL_GetMouseState(&xMouse,&yMouse);
 				assets = loadTexture("./assets/elements.png");
@@ -165,18 +169,34 @@ void Game::run( )
 				// }
 				//return success;
 			}
+			// Handle keyboard input for moving pacman
+            if (e.type == SDL_KEYDOWN) {
+				pacman.movePacman(e.key.keysym.sym);
+            }
+			// if( Mix_PlayingMusic() == 0 ) // Tells you if music is actively playing,
+			// {
+			// 	//Play the music
+			// 	Mix_PlayMusic( gMusic, 2 );
+			// }
+			
 		}
 
 		SDL_RenderClear(gRenderer); //removes everything from renderer
 		SDL_RenderCopy(gRenderer, gTexture, NULL, NULL);//Draws background to renderer
 		//***********************draw the objects here********************
 
-		drawObjects(gRenderer, assets);
-
+		level1.drawObjects(gRenderer, assets);
+	
 		//****************************************************************
     	SDL_RenderPresent(gRenderer); //displays the updated renderer
+		frameTime = SDL_GetTicks() - frameStart;
 
-	    SDL_Delay(200);	//causes sdl engine to delay for specified miliseconds
+        // Cap the frame rate to achieve the desired fps
+        if (frameDelay > frameTime) {
+            SDL_Delay(frameDelay - frameTime);
+        }
+		// SDL_Delay(200);	//causes sdl engine to delay for specified miliseconds
+
 	}
-			
+	
 }

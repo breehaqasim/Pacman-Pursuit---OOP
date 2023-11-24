@@ -1,13 +1,3 @@
-[5:15 PM, 11/24/2023] Breeha: #include<SDL.h>
-#include <SDL_mixer.h>
-#pragma once
-
-class Level1
-{
-    public:
-        void drawObjects(SDL_Renderer* gRnderer, SDL_Texture* assets);
-};
-[5:17 PM, 11/24/2023] Breeha: #include<iostream>
 #include "Level1.hpp"
 #include <vector>
 #include "SDL.h"

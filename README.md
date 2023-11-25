@@ -8,3 +8,13 @@ Collect all the yellow dots in level to complete the level. Players should avoid
 ## Instructions:
 Use arrow keys (UP/DOWN/LEFT/RIGHT) to guide the pac man character 
 Eat all yellow dots on the screen while avoiding the chase of little ghosts
+
+## How to build the project?
+First, you have to make sure that you have installed SDL2 and SDL2-image libraries.
+- Open VSCode terminal and put this command to compile everything:
+
+	g++ *.cpp -IC:\mingw_dev_lib\include\SDL2 -LC:\mingw_dev_lib\lib -w -lmingw32 -lSDL2main -lSDL2 -lSDL2_image
+
+- Run the game by this command:
+
+	.\a.exe

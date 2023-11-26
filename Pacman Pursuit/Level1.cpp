@@ -6,8 +6,6 @@
 
 using namespace std;
 
-// Unit p = {{305,174,37,40}, {310, 174, 30, 30}};
-// Unit red= {{596,250,40,37}, {443, 228, 30, 30}};
 Unit orange= {{353,250,41,34}, {443, 260, 30, 30}};
 Unit pink= {{439,250,39,37}, {701, 328, 30, 30}};
 Unit blue= {{519,250,41,37}, {701, 360, 30, 30}};
@@ -28,17 +26,10 @@ Unit dot9= {{394,185,18,18}, {588, 359, 20, 20}};
 // we've used spritecow.com to find exact values of other asset images
 
 
-void Level1::drawObjects(SDL_Renderer* gRenderer, SDL_Texture* assets){
-
-    // // this function is drawing one pacman only right now
-    // SDL_RenderCopy(gRenderer, assets, &p.srcRect, &p.moverRect); 
+void Level1::drawObjects(SDL_Renderer* gRenderer, SDL_Texture* assets){ 
 
     Pacman pac;
     pac.drawPacman(gRenderer, assets);  
-
-    //this function is drawing red enemy
-    // SDL_RenderCopy(gRenderer, assets, &red.srcRect, &red.moverRect); 
-    // red.moverRect.y+=1; 
 
     Red red;
     red.drawEnemy(gRenderer, assets);

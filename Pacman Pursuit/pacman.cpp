@@ -1,6 +1,6 @@
 #include "pacman.hpp"
-
-Unit p = {{305,174,37,40}, {310, 174, 30, 30}};
+#include<iostream>
+#pragma once
 
 void Pacman::movePacman(SDL_Keycode key) {
     if (key == SDLK_UP) {
@@ -41,8 +41,39 @@ void Pacman::movePacman(SDL_Keycode key) {
     }
 }
 
+void Pacman:: freezepacman(SDL_Keycode key)
+{
+    if (key == SDLK_UP) 
+    {   
+
+    } 
+    else if (key == SDLK_DOWN) 
+    {
+        
+    } 
+    else if (key == SDLK_RIGHT) 
+    {
+    
+        
+    } 
+    
+    else if (key == SDLK_LEFT) 
+    {
+        
+    }
+
+}
+
 void Pacman::drawPacman(SDL_Renderer* gRnderer, SDL_Texture* assets)
 {
     // this function is drawing one pacman only right now
     SDL_RenderCopy(gRnderer, assets, &p.srcRect, &p.moverRect);  
+}
+
+Unit& Pacman::pacgetter() {
+    return p;   
+}
+
+Unit& Pacman::pacresetter( Unit& p ) {
+    p = {{305,174,37,40}, {310, 174, 30, 30}};
 }

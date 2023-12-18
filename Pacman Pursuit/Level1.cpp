@@ -6,9 +6,8 @@
 using namespace std;
 
 
-void Level1::drawObjects(SDL_Renderer* gRenderer, SDL_Texture* assets,std::vector<Enemy*>& enemies, Pacman& pac,Dot& dot,Death& death)
+void Level1::drawObjects(SDL_Renderer* gRenderer, SDL_Texture* assets,std::vector<Enemy*>& enemies, Pacman& pac,Dot& dot,Death& death,bool mainscreen)
 {
-    Game a;
 
     //drawing arrow keys to screen
     SDL_RenderCopy(gRenderer, assets, &arrow.srcRect, &arrow.moverRect);
@@ -70,15 +69,16 @@ void Level1::drawObjects(SDL_Renderer* gRenderer, SDL_Texture* assets,std::vecto
                 death.display();
             }
         }
-
-        string deathText = "Deaths: " + to_string(death.valueget());
-
-        Unit pacvoid=  {{305,174,37,40}, {310, 174, 30, 30}};
-        
-        a.renderText(gRenderer, deathText, 500, 500);
-        // a.renderText(gRenderer, deathText, 500, 500);
+        // a.renderText(gRenderer, deathText, 5 00, 500);
     }
-
     // this function is drawing dots right now
     dot.drawDot(gRenderer, assets, pac);
+
+    Game a;
+    if (mainscreen==true)
+    {
+    string deathText = "Deaths: " + to_string(death.valueget());
+    a.renderText(gRenderer, deathText, 500, 500);
+
+    }
 }

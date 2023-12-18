@@ -1,9 +1,6 @@
 #include "purple.hpp"
 #include <iostream>
-
-Unit purple1= {{663,249,40,38}, {258, 375, 30, 30}};
-Unit purple2= {{596,250,40,37}, {258, 375 ,30, 30}};
-
+#pragma once
 
 void Purple::drawEnemy(SDL_Renderer* gRnderer, SDL_Texture* assets)
 {
@@ -24,5 +21,10 @@ void Purple::drawEnemy(SDL_Renderer* gRnderer, SDL_Texture* assets)
             purple2.moverRect.x=899;
         }
     }
-
 }
+
+
+Unit& Purple :: purplegetter()
+    {
+        return purple1;
+    }

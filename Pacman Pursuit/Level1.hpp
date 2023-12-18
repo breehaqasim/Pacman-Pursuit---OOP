@@ -18,5 +18,5 @@ class Level1
         Unit arrow= {{281,401,324,236}, {1000, 100, 120, 120}};
         Death deathCounter;
     public:
-        void drawObjects(SDL_Renderer* gRnderer, SDL_Texture* assets,std::vector<Enemy*>& enemies, Pacman& pac,Dot& dot, Death& death);
+        void drawObjects(SDL_Renderer* gRnderer, SDL_Texture* assets,std::vector<Enemy*>& enemies, Pacman& pac,Dot& dot, Death& death, bool mainscreen);
 };

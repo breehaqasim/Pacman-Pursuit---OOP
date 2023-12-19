@@ -6,8 +6,7 @@ Collect all the yellow dots in level to complete the level. Players should avoid
 ![This is our game implementation](https://github.com/breehaqasim/Pacman-Pursuit---OOP/blob/f0d4fc84a6fd0a7063aca29e7c38f4e74f2525aa/Pacman%20Pursuit/game%20screen.jpeg)
 
 ## UML Diagram:
-![This is our game UML Diagram]([https://github.com/breehaqasim/Pacman-Pursuit---OOP/blob/f0d4fc84a6fd0a7063aca29e7c38f4e74f2525aa/Pacman%20Pursuit/game%20screen.jpeg](https://github.com/breehaqasim/Pacman-Pursuit---OOP/blob/4760ba0ea0a6ddf7a5f6d7c73adbbb31fc27c8d5/UML%20Diagram.jpg
-))
+![This is our game UML Diagram](https://github.com/breehaqasim/Pacman-Pursuit---OOP/blob/4760ba0ea0a6ddf7a5f6d7c73adbbb31fc27c8d5/UML%20Diagram.jpg)
 
 ## Instructions:
 Use arrow keys (UP/DOWN/LEFT/RIGHT) to guide the pac man character 

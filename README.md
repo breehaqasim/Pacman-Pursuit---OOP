@@ -21,3 +21,6 @@ Ensure you have the SDL2 and SDL2-image libraries installed on your system. Foll
 2. **Compile the game using the following command in the VSCode terminal:**
    ```bash
    g++ *.cpp -IC:\mingw_dev_lib\include\SDL2 -LC:\mingw_dev_lib\lib -w -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
+2. **Run the game**
+   ```bash
+.\a.exe

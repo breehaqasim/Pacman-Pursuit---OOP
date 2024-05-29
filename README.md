@@ -1,23 +1,23 @@
-# Pacman-Pursuit---OOP
+# 🎮 Pacman Pursuit - OOP
 
-This project combines elements from Pac-Man and the World's Hardest Game implemented using SDL2 library in C++, creating an engaging and challenging gameplay experience. Players take control of the iconic Pac-Man character, navigating through dynamic maze filled with little ghosts, all while eating yellow dots and striving for victory. 
-Collect all the yellow dots in level to complete the level. Players should avoid the little ghosts along the way, otherwise you will return to the starting area of that  level. If you collide with a ghost your failed attempts will get incremented.
+"Pacman Pursuit" is an engaging and challenging game that infuses elements from the classic Pac-Man game with the dynamic challenges of the World's Hardest Game. Developed using the SDL2 library in C++, this project offers a nostalgic yet fresh gameplay experience. Control the iconic Pac-Man, navigate through intricately designed mazes, avoid the pesky ghosts, and collect all the yellow dots to advance through levels.
 
-![This is our game implementation](https://github.com/breehaqasim/Pacman-Pursuit---OOP/blob/f0d4fc84a6fd0a7063aca29e7c38f4e74f2525aa/Pacman%20Pursuit/game%20screen.jpeg)
+## 📸 Game Screenshot
+![Pacman Pursuit Gameplay](https://github.com/breehaqasim/Pacman-Pursuit---OOP/blob/f0d4fc84a6fd0a7063aca29e7c38f4e74f2525aa/Pacman%20Pursuit/game%20screen.jpeg)
 
-## UML Diagram:
-![This is our game UML Diagram](https://github.com/breehaqasim/Pacman-Pursuit---OOP/blob/c102de98dc87406fda6970f8c4a233391493e02c/UML%20Diagram.jpg)
+## 📊 UML Diagram
+Here's a look at our project's architecture:
+![Pacman Pursuit UML Diagram](https://github.com/breehaqasim/Pacman-Pursuit---OOP/blob/c102de98dc87406fda6970f8c4a233391493e02c/UML%20Diagram.jpg)
 
-## Instructions:
-Use arrow keys (UP/DOWN/LEFT/RIGHT) to guide the pac man character 
-Eat all yellow dots on the screen while avoiding the chase of little ghosts
+## 🎮 How to Play
+- Use the **arrow keys (UP/DOWN/LEFT/RIGHT)** to navigate Pac-Man through the maze.
+- Aim to eat all the yellow dots on each level while avoiding collisions with the ghosts.
+- Each collision with a ghost sends Pac-Man back to the starting area of the level and increments your failed attempts counter.
 
-## How to build the project?
-First, you have to make sure that you have installed SDL2 and SDL2-image libraries.
-- Open this folder in VSCode
-- Open VSCode terminal and put this command to compile everything:
-	g++ *.cpp -IC:\mingw_dev_lib\include\SDL2 -LC:\mingw_dev_lib\lib -w -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2 -lSDL2_mixer
+## 🔧 How to Build the Project
+Ensure you have the SDL2 and SDL2-image libraries installed on your system. Follow these steps to compile and run the game on your local machine:
 
-- Run the game by this command:
-
-	.\a.exe
+1. **Open the project folder in VSCode.**
+2. **Compile the game using the following command in the VSCode terminal:**
+   ```bash
+   g++ *.cpp -IC:\mingw_dev_lib\include\SDL2 -LC:\mingw_dev_lib\lib -w -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
